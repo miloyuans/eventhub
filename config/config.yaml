@@ -1,0 +1,23 @@
+server:
+  port: ":8080"
+  env: "production"
+
+mongodb:
+  uri: "mongodb://localhost:27017"
+  db_name: "event_center"
+  timeout_seconds: 10
+
+# 慢SQL模块专用配置
+slow_sql:
+  buffer_size: 5000       # 缓冲队列大小
+  workers: 20             # 并发处理协程数
+  retention_days: 7       # 数据保留天数
+  remark_max_len: 200     # 备注最大长度
+  
+  telegram:
+    enabled: true
+    token: "YOUR_BOT_TOKEN"
+    chat_ids: [-100123456789] # 支持多群组
+    interval_minutes: 60      # 告警聚合间隔
+    # 如果消息过长，是否合并为文件发送
+    send_file_threshold: 4000
