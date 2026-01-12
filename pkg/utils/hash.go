@@ -3,7 +3,7 @@ package utils
 import (
 	"crypto/md5"
 	"encoding/hex"
-	"fmt"
+	//"fmt"
 )
 
 // GenerateID 生成唯一指纹
